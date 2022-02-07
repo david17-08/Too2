@@ -29,8 +29,26 @@
                       </div> -->
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Cedula</label>
-                          <input type="text" name="codigo" class="form-control" value="<?= $vecotor["Cedula"] ?>">
+                          <label class="bmd-label-floating">Cédula</label>
+                          <input type="text" name="codigo" class="form-control" value="<?= $vecotor["Cedula"] ?>" maxlenght="10" onkeypress="return cedula(event);" required>
+                          <script>
+                            function cedula(evt){
+                              if(window.event){
+                                keynum = evt.keyCode;
+                              }
+                              else{
+                                keynum = evt.which;
+                              }
+                              if((keynum >47 && keynum <58) || keynum == 8 || key num == 13)
+                              {
+                              return true; 
+                              }
+                              else{
+                                alert("Ingrese solo números");
+                                return false;
+                              }
+                            }
+                          </script>
                         </div>
                       </div>
                       <div class="col-md-4">

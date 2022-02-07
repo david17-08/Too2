@@ -41,8 +41,26 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                            <label class="bmd-label-floating">Cedúla</label>
-                            <input type="text" disabled="true" class="form-control" name="Apellido" value="">
+                            <label class="bmd-label-floating">Cédula</label>
+                            <input type="text" disabled="true" class="form-control" name="Apellido" value="" maxlenght="10" onkeypress="return cedula(event);" required>
+                            <script>
+                            function cedula(evt){
+                              if(window.event){
+                                keynum = evt.keyCode;
+                              }
+                              else{
+                                keynum = evt.which;
+                              }
+                              if((keynum > 47 && keynum < 58) || keynum == 8 || key num == 13)
+                              {
+                              return true; 
+                              }
+                              else{
+                                alert("Ingrese solo números");
+                                return false;
+                              }
+                            }
+                          </script>
                           </div>
                         </div>
                         <div class="col-md-6">
